@@ -1,0 +1,4 @@
+Flask==3.0.2
+Werkzeug==3.0.1
+pyserial==3.5
+captain-pycard==0.9.11
