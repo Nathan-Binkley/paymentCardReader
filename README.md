@@ -1,53 +1,29 @@
-# Payment ISO Standards API
+# magstripe-python
+Tool for reading/writing to magnetic stripe cards that follow ISO/IEC 7813 standards | Compatible with MSR605 and MSR605X magnetic stripe encoders
 
-A simple Flask API to explore payment ISO messaging standards (8583, 20022, and 7813).
+## Instructions
 
-## Setup
+### Install Dependencies
 
-1. Create a virtual environment (recommended):
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+$ pip install -r requirements.txt
 ```
 
-2. Install dependencies:
+### Start Flask Server
+
 ```bash
-pip install -r requirements.txt
+$ python3 app.py
+
+* Running on http://0.0.0.0:8000/
+...
 ```
+## Compatibility
 
-## Running the API
+This should work with *any* card utilizing a magnetic stripe that follows ISO/IEC 7813 standards.
 
-Start the Flask development server:
-```bash
-python app.py
-```
+## Acknowledgements
 
-The API will be available at `http://localhost:5000`
+Magstripe-python is an extension of the work done by Damien Bobillot, who wrote the Python
+driver for the MSR605's serial interface and Raphael Michel who wrote the wrapper around the driver.
 
-## Endpoints
-
-### GET /api/iso-standards
-Returns a list of available ISO standards for payment messaging.
-
-Example response:
-```json
-{
-    "standards": [
-        {
-            "name": "ISO 8583",
-            "description": "Financial transaction card originated messages",
-            "year": 1987
-        },
-        {
-            "name": "ISO 20022",
-            "description": "Universal financial industry message scheme",
-            "year": 2004
-        },
-        {
-            "name": "ISO 7813",
-            "description": "Identification cards - Financial transaction cards",
-            "year": 2006
-        }
-    ]
-}
-``` 
+As both Damien and Raphael's work is GPL, this is licensed under the terms of the GPL, as well.
